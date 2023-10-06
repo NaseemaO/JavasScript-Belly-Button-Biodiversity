@@ -1,7 +1,7 @@
 # belly-button-challenge
 Challenge 14   JavaScript Assignment
 
-Here is a link to the dashboard: put my github link here. 
+Here is a link to the dashboard: https://naseemao.github.io/belly-button-challenge/
 
 This study explores the Belly Button Biodiversity dataset which catalogs the microbes that colonize human navels. 
 The dataset reveals that a small handful of microbial species (also called operational taxonomic units, or OTUs, in the study) were present in more than 70% of people, while the rest were relatively rare.
@@ -114,38 +114,38 @@ Use console.log inside of your JavaScript code to see what your data looks like 
 Refer to the Plotly.js documentationLinks to an external site. when building the plots.
 
 Requirements
-Bar Chart (30 points)
-Chart initializes without error (10 points)
+Bar Chart 
+Chart initializes without error 
 
-Chart updates when a new sample is selected (5 points)
+Chart updates when a new sample is selected 
 
-Chart uses Top 10 sample values as values (5 points)
+Chart uses Top 10 sample values as values 
 
-Chart uses otu_ids as the labels (5 points)
+Chart uses otu_ids as the labels 
 
-Chart uses otu_labels as the tooltip (5 points)
+Chart uses otu_labels as the tooltip 
 
-Bubble Charts (40 points)
-Chart initializes without error (10 points)
+Bubble Charts 
+Chart initializes without error 
 
-Chart updates when a new sample is selected (5 points)
+Chart updates when a new sample is selected 
 
-Chart uses otu_ids for the x values (5 points)
+Chart uses otu_ids for the x values 
 
-Chart uses otu_ids for marker colors (5 points)
+Chart uses otu_ids for marker colors 
 
-Chart uses sample_values for the y values (5 points)
+Chart uses sample_values for the y values 
 
-Chart uses sample_values for the marker size (5 points)
+Chart uses sample_values for the marker size 
 
-Chart uses `otu_labels for text values (5 points)
+Chart uses `otu_labels for text values 
 
-Metadata and Deployment (30 points)
-Metadata initializes without error (10 points)
+Metadata and Deployment 
+Metadata initializes without error 
 
-Metadata updates when a new sample is selected (10 points)
+Metadata updates when a new sample is selected 
 
-App Successfully Deployed to Github Pages (10 points)
+App Successfully Deployed to Github Pages 
 
 
 
