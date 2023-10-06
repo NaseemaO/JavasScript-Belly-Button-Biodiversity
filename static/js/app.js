@@ -94,108 +94,99 @@ function buildMetadata(sample) {
 
 };
 
-//  Hortizontal Bar Chart
-function buildbarCharts(sample) {
-//  get data.samples in a variable 
+// Horizontal Bar Chart
+function buildBarChart(sample) {
+
+    // Use D3 to retrieve all of the data
     d3.json(url).then((data) => {
-        let samplesArray = data.samples;
-        console.log(samplesArray)
-// filter for the sample
-        let filtered = samplesArray.filter(sampleObject => sampleObject.id == sample);
-        console.log(filtered)
 
-        let metadata = data.metadata;
-        let filtered2 = metadata.filter(sampleObject => sampleObject.id == sample);
-        let result = filtered2[0];
-        let samplenew = filtered[0]
-        console.log(samplenew)
-      
-// Create variables that hold the otu_ids, otu_labels, and sample_values.
-   
-        let  otuIds = samplenew.otu_ids
-        let  otuLabels = samplenew.otu_labels
-        let  sampleValues = samplenew.sample_values
-        console.log(otuIds)
-        console.log(otuLabels)
-        console.log(sampleValues)
-    
-// Variable that holds Washing freq
-        let  washfreq = parseFloat(result.wfreq)
-        console.log(washfreq)
+        // Retrieve all sample data
+        let sampleInfo = data.samples;
 
-// Get the the top 10 otu_ids and map them in descending order      
+        // Filter based on the value of the sample
+        let value = sampleInfo.filter(result => result.id == sample);
 
-    let yticks = otuIds.slice(0,10).map(ids => `OTU ${ids}`).reverse();
-    console.log(yticks);
-    
-    let barData = [{
-      x: sampleValues.slice(0,10).reverse(),
-      y: yticks,
-      text: otuLabels.slice(0,10).reverse(),
-      type: "bar",
-      orientation: "h"
-    }];
+        // Get the first index from the array
+        let valueData = value[0];
 
-// Bar chart layout and plot 
-    let barLayout = {
-      title : "Top 10 Microbial Species (OTU) Found"
-    };
+        // Get the otu_ids, lables, and sample values
+        let otuIds = valueData.otu_ids;
+        let otuLabels = valueData.otu_labels;
+        let sampleValues = valueData.sample_values;
 
-    Plotly.newPlot("bar", barData, barLayout)
+        // Log the data to the console
+        console.log(otuIds,otuLabels,sampleValues);
 
+        // Set top ten items to display in descending order
+        let yticks = otuIds.slice(0,10).map(id => `OTU ${id}`).reverse();
+        let xticks = sampleValues.slice(0,10).reverse();
+        let labels = otuLabels.slice(0,10).reverse();
+        
+        // Set up the trace for the bar chart
+        let trace = {
+            x: xticks,
+            y: yticks,
+            text: labels,
+            type: "bar",
+            orientation: "h"
+        };
+
+        // Setup the layout
+        let layout = {
+            title: "Top 10 Microbial Species OTUs Found"
+        };
+
+        // Call Plotly to plot the bar chart
+        Plotly.newPlot("bar", [trace], layout)
     });
-
-
-// Bubble Chart
-    let bubbleChart = [{
-    x: otuIds, 
-    y: sampleValues,
-    text: otuLabels,
-    mode: "markers",
-    marker:{
-    size: sampleValues,
-    color: otuIds,
-    colorscale: "Earth"
-    }
-    }];
-// layout for the Bubble chart  
-    let bubbleLayout = {
-    title: "Microbial Species Per Sample",
-    xaxis: {title:"OTU ID"},
-    };
-
-// plot the data with the layout.
-Plotly.newPlot("bubble", bubbleData, bubbleLayout);
-
-
-// Create the trace for the gauge chart.
-    let gaugeData = [{
-    domain: { x: [0, 1], y: [0, 1] },
-    value: washfreq,
-    type: "indicator",
-    mode: "gauge+number",
-    title: { text: "Belly Button Washing Frequency <br>Scrubs per Week " },
-    gauge: {
-      axis: {range:[null,10],tickwidth:2},
-      steps: [
-        { range: [0, 2], color: "red" },
-        { range: [2, 4], color: "orange" },
-        { range: [4, 6], color: "yellow" },
-        { range: [6, 8], color: "lightgreen" },
-        { range: [8, 10], color: "green" },
-      ]
-
-    }
-    }];
-
-    let gaugeLayout = { 
-     width: 450, 
-    height: 445,
-     margin: { t: 0, b: 0 }
-    };
-
-//  Plotly to plot the gauge data and layout.
-Plotly.newPlot("gauge", gaugeData, gaugeLayout )
-
 };
+
+// Function that builds the bubble chart
+function buildBubbleChart(sample) {
+
+    // Use D3 to retrieve all of the data
+    d3.json(url).then((data) => {
+        
+        // Retrieve all sample data
+        let sampleInfo = data.samples;
+
+        // Filter based on the value of the sample
+        let value = sampleInfo.filter(result => result.id == sample);
+
+        // Get the first index from the array
+        let valueData = value[0];
+
+        // Get the otu_ids, lables, and sample values
+        let otuIds = valueData.otu_ids;
+        let otuLabels = valueData.otu_labels;
+        let sampleValues = valueData.sample_values;
+
+        // Log the data to the console
+        console.log(otuIds,otuLabels,sampleValues);
+        
+        // Set up the trace for bubble chart
+        let trace1 = {
+            x: otuIds,
+            y: sampleValues,
+            text: otuLabels,
+            mode: "markers",
+            marker: {
+                size: sampleValues,
+                color: otuIds,
+                colorscale: "Earth"
+            }
+        };
+
+        // Set up the layout
+        let layout = {
+            title: "Bacteria Per Sample",
+            hovermode: "closest",
+            xaxis: {title: "OTU ID"},
+        };
+
+        // Call Plotly to plot the bubble chart
+        Plotly.newPlot("bubble", [trace1], layout)
+    });
+};
+
 init();
