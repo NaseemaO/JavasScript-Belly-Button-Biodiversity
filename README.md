@@ -3,14 +3,14 @@
 
 ### Link to the App (webpage / dashboard): https://naseemao.github.io/belly-button-challenge/
 
+### Overview: 
 An interactive dashboard is built that explores the Belly Button Biodiversity dataset which catalogs the microbes that colonize human navels. 
 The dataset reveals that a small handful of microbial species (also called operational taxonomic units, or OTUs, in the study) were present in more than 70% of people, while the rest were relatively rare.
-
-### Overview: 
 User may select the Test Subject ID No. from the dropdown menu, and view the Demographic information for the selected Subject. 
 Information displayed in the Demographic Info for selected Test Subject ID consists of: Subject ID, Ethnicity, Gender, Age, Location, belly Button Type, and Washing Frequency. 
+Top 10 OTUs found represented and their amounts represented in the bar, bubble and guage Charts.
 
-### Visualizations:
+#### Visualizations:
 The Bar chart shows the top 10 microbial species aka OTU found in this selected Subject's sample. 
 The Bubble chart shows the amount of each of the 10 OTUs found in the sample
 
