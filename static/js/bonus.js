@@ -1,3 +1,5 @@
+// Optional Bonus part of the assignment is to create a Gauge Chart for the Test Subject's Washing Frequency of the Naval 
+
 // Function that builds the gauge chart
 function buildGaugeChart(sample) {
   
