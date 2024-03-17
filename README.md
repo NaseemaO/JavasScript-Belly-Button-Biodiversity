@@ -1,7 +1,6 @@
-# belly-button-challenge
-## Challenge 14   JavaScript Assignment. Course: BootCamp Data Visualization and Data Analytics
+# JavaScript Project. Belly Button Biodiversity
 
-### Link to the App (webpage / dashboard): https://naseemao.github.io/belly-button-challenge/
+## Webpage / Dashboard: https://naseemao.github.io/belly-button-challenge/
 
 ### Overview: 
 An interactive dashboard is built that explores the Belly Button Biodiversity dataset which catalogs the microbes that colonize human navels. 
