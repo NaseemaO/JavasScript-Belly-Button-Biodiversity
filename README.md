@@ -1,6 +1,7 @@
 # JavaScript Project. Belly Button Biodiversity
 
-## Webpage / Dashboard: https://naseemao.github.io/belly-button-challenge/
+## Webpage / Dashboard: Download the index.html, app.js, bonus.js. Open the index.html file in in Google Chrome. 
+
 
 ### Overview: 
 An interactive dashboard is built that explores the Belly Button Biodiversity dataset which catalogs the microbes that colonize human navels. 
@@ -14,15 +15,13 @@ The Bar chart shows the top 10 microbial species aka OTU found in this selected 
 The Bubble chart shows the amount of each of the 10 OTUs found in the sample
 
 ### Files:
-Located in my git hub repository https://github.com/NaseemaO/belly-button-challenge
-Data file: sample.json
-
-code files:
-html file: index.html
-app.js and bonus.js in the Static/js folder.  The app.js is the code file for the dropdown menu, demographic inforation of the subject selected, and the visualizaions: Bar and Bubble Charts. 
-The bonus file is code for the Gauge chart plot. 
-
-Images in Images folder with pictures of the default/ 1st Sample ID 940.  
+Located in git hub repository 
+samples.json  Data file. 
+index.html    Code file. 
+static folder: 
+    app.js      The app.js is the code file for the dropdown menu, demographic information of the subject selected, and the visualizaions: Bar and Bubble Charts. 
+    bonus.js    The bonus file is code for the Gauge chart plot. 
+images folder: Images of the default/ 1st Sample ID 940.  
 
 ### Study: 
 D3 library used to read in data from samples.json from url: https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json
